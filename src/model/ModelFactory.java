@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 public class ModelFactory {
 
     private ResourceBundle data;
+    private final String bd_tipo = "BD";
     private final String type_file = "FILE";
 
     public Model getModel() {
@@ -21,10 +22,13 @@ public class ModelFactory {
         Model model = null;
 
         String data = ResourceBundle.getBundle("application.TipoEjecucion").getString("model_type");
-        
+
         if (type_file.equals(data)) {
+
+            model = new ModelFileImplementation();
+        } else {
             
-            model= new ModelFileImplementation();
+            model = new ModelDBImplementation();
         }
 
         return model;

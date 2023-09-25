@@ -11,6 +11,6 @@ package model;
  */
 public interface Model {
 
-    public String getGreeting();
+    public String getGreeting() throws Exception;
     
 }
