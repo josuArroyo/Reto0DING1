@@ -5,6 +5,7 @@
  */
 package model;
 
+import exception.ReadException;
 import java.util.ResourceBundle;
 
 /**
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 public class ModelFileImplementation implements Model {
 
     @Override
-    public String getGreeting() {
+    public String getGreeting() throws ReadException{
         String text;
         ResourceBundle text_data; //Sirve para recoger los datos de otros archivos
         text_data=ResourceBundle.getBundle("model.greeting");
