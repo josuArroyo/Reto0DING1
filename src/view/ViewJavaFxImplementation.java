@@ -6,25 +6,43 @@
 package view;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import view.ViewJavaFxController;
 
 /**
  *
  * @author 2dam
  */
-public class ViewJavaFxImplementation extends javafx.application.Application implements View{
+public class ViewJavaFxImplementation extends javafx.application.Application implements View {
+
+    private static String greeting;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-    
-        Application application = null;
-        application.start(primaryStage);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ViewImplementation.fxml"));
+        Parent root = (Parent) loader.load();
+
+        ViewJavaFxController viewController = ((ViewJavaFxController) loader.getController());
+
+        viewController.setStage(primaryStage);
+        viewController.showGreeting(greeting);
+       
+        viewController.initStage(root);
+
     }
 
     @Override
     public void showGreeting(String data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //aqui le tenemos que pasar e lgreting al controller creo not sure 
+        
+        greeting = data;
+        System.out.println(greeting);
+        launch(data);
     }
-    
+
 }

@@ -29,12 +29,11 @@ public class ModelDBImplementation implements Model {
     private String urlDB;
     private String userDB;
     private String passwordDB;
-    
+
     //CONSEULTA DE SQL
     private final String consulMensaje = "SELECT HelloThere FROM hello";
 
     //Cojemos la información para conectarnos a la BD
-    
     public ModelDBImplementation() {
         this.config = ResourceBundle.getBundle("model.configDB");
         this.driverDB = this.config.getString("Driver");
@@ -43,18 +42,17 @@ public class ModelDBImplementation implements Model {
         this.passwordDB = this.config.getString("DBPass");
 
     }
-    
+
     //Metodo para abrir conexion con la base de datos
-    public void openConnection() throws DaoException{
-          try {
-           
+    public void openConnection() throws DaoException {
+        try {
+
             con = DriverManager.getConnection(this.urlDB, this.userDB, this.passwordDB);
         } catch (SQLException e) {
             throw new DaoException("Error en la base de datos al intentar conectar" + e.getMessage());
         }
     }
-   
-    
+
     public void closeConnection() throws DaoException {
         try {
             if (stmt != null) {
@@ -67,12 +65,11 @@ public class ModelDBImplementation implements Model {
             throw new DaoException("Error de SQL " + e.getMessage());
         }
     }
-    
-  
+
     @Override
     public String getGreeting() throws DaoException, ReadException {
         String text = "";
-        
+
         ResultSet rs = null;
         try {
             this.openConnection();
@@ -81,19 +78,19 @@ public class ModelDBImplementation implements Model {
         }
         try {
             stmt = con.prepareStatement(consulMensaje);
-            
+
             rs = stmt.executeQuery();
-            while(rs.next()){
-            text = rs.getString("HelloThere");
+            while (rs.next()) {
+                text = rs.getString("HelloThere");
             }
 
         } catch (Exception e) {
             throw new ReadException("Error de Lectura");
-           
+
         }
         this.closeConnection();
         return text;
-    
+
     }
 
 }

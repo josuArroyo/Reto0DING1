@@ -14,32 +14,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.ModelFactory;
-import view.FXMLDocumentController;
+
 import view.ViewFactory;
 
 /**
  *
  * @author 2dam
  */
-public class Application extends javafx.application.Application {
-
-    @Override
-    public void start(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("view.ViewImplementation.fxml"));
-        // FXMLDocumentController viewController =loader.getController();
-        //viewController.setGreating(greating);
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        //esta no se si debe quedarse aqui
-        stage.show();
-
-    }
-
-    /**
+public class Application {
+     /**
      * @param args the command line arguments
      */
+   
     public static void main(String[] args) {
 
         ViewFactory view = new ViewFactory();
