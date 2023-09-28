@@ -46,7 +46,7 @@ public class ViewJavaFxImplementation extends javafx.application.Application imp
     public void showGreeting(String data) {
         
         greeting = data;
-        System.out.println(greeting);
+        
         launch(data);
     }
 
