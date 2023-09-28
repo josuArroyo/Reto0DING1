@@ -16,7 +16,7 @@ import view.ViewJavaFxController;
 
 /**
  *
- * @author 2dam
+ * @author josu
  */
 public class ViewJavaFxImplementation extends javafx.application.Application implements View {
 
@@ -37,6 +37,11 @@ public class ViewJavaFxImplementation extends javafx.application.Application imp
 
     }
 
+    /**
+     * Muestra un saludo en la vista.
+     * 
+     * @param data El saludo que se va a mostrar en la vista.
+     */
     @Override
     public void showGreeting(String data) {
         

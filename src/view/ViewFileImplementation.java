@@ -13,6 +13,11 @@ package view;
  */
 public class ViewFileImplementation implements View {
 
+    /**
+     * Muestra un mensaje en la consola.
+     * 
+     * @param message El mensaje que se va a mostrar en la consola.
+     */
     @Override
     public void showGreeting(String message) {
         System.out.println(message);

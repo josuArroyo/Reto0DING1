@@ -19,21 +19,29 @@ import view.ViewFactory;
 
 /**
  *
- * @author 2dam
+ * @author Josu
  */
 public class Application {
-     /**
+
+    /**
+     *El metodo principal de la aplicacion
      * @param args the command line arguments
      */
-   
+
     public static void main(String[] args) {
 
+        /**
+         * Inicializar la vista, el modelo y el controlador
+         */
         ViewFactory view = new ViewFactory();
         ModelFactory model = new ModelFactory();
 
         Controller controller = new Controller();
 
         try {
+            /**
+             *  Iniciar la aplicación ejecutando el controlador
+             */
             controller.run(view.geView(), model.getModel());
         } catch (Exception ex) {
             //Logger.getLogger(application.APP.class.getName()).log(Level.SEVERE, null, ex);

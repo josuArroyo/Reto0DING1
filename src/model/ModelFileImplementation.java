@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author Josu
+ * @author Egoitz
  * 
  * Recoge el saludo con el metodo getGreeting del archivo de propiedades de greeting
  */

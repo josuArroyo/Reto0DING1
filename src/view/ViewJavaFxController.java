@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author 2dam
+ * @author Josu
  */
 public class ViewJavaFxController{
 
@@ -60,7 +60,11 @@ public class ViewJavaFxController{
         this.greeting=greeting;
     }
 */
-   
+   /**
+     * Muestra un saludo en la ventana.
+     * 
+     * @param data El saludo que se va a mostrar en la ventana.
+     */
     public void showGreeting(String data) {
        this.greeting=data;
     }

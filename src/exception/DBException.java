@@ -7,10 +7,15 @@ package exception;
 
 /**
  *
- * @author 2dam
+ * @author Josu
  */
 public class DBException extends Exception{
     
+    /**
+     * Crea una nueva instancia de la excepción con un mensaje descriptivo.
+     * 
+     * @param message El mensaje descriptivo que detalla el error.
+     */
      public DBException (String message){
         super (message);
     }

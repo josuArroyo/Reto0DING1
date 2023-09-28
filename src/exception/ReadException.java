@@ -7,12 +7,17 @@ package exception;
 
 /**
  *
- * @author 2dam
+ * @author Josu
  */
 public class ReadException extends Exception {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Crea una nueva instancia de la excepción con un mensaje descriptivo.
+     * 
+     * @param message El mensaje descriptivo que detalla el error.
+     */
     public ReadException(String message) {
         super(message);
     }
