@@ -14,40 +14,34 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.ModelFactory;
-import view.FXMLDocumentController;
+
 import view.ViewFactory;
 
 /**
  *
- * @author 2dam
+ * @author Josu
  */
-public class Application extends javafx.application.Application {
-
-    @Override
-    public void start(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("view.ViewImplementation.fxml"));
-        // FXMLDocumentController viewController =loader.getController();
-        //viewController.setGreating(greating);
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        //esta no se si debe quedarse aqui
-        stage.show();
-
-    }
+public class Application {
 
     /**
+     *El metodo principal de la aplicacion
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
 
+        /**
+         * Inicializar la vista, el modelo y el controlador
+         */
         ViewFactory view = new ViewFactory();
         ModelFactory model = new ModelFactory();
 
         Controller controller = new Controller();
 
         try {
+            /**
+             *  Iniciar la aplicación ejecutando el controlador
+             */
             controller.run(view.geView(), model.getModel());
         } catch (Exception ex) {
             //Logger.getLogger(application.APP.class.getName()).log(Level.SEVERE, null, ex);

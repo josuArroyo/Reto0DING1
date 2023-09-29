@@ -7,12 +7,17 @@ package exception;
 
 /**
  *
- * @author 2dam
+ * @author josu
  */
 public class DaoException extends Exception {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Crea una nueva instancia de la excepción con un mensaje descriptivo.
+     * 
+     * @param message El mensaje descriptivo que detalla el error.
+     */
     public DaoException(String message) {
         super(message);
     }

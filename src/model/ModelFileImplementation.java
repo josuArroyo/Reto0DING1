@@ -5,18 +5,19 @@
  */
 package model;
 
+import exception.ReadException;
 import java.util.ResourceBundle;
 
 /**
  *
- * @author Josu
+ * @author Egoitz
  * 
  * Recoge el saludo con el metodo getGreeting del archivo de propiedades de greeting
  */
 public class ModelFileImplementation implements Model {
 
     @Override
-    public String getGreeting() {
+    public String getGreeting() throws ReadException{
         String text;
         ResourceBundle text_data; //Sirve para recoger los datos de otros archivos
         text_data=ResourceBundle.getBundle("model.greeting");
